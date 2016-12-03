@@ -1,5 +1,5 @@
 from app import db
-
+from datetime import datetime
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -27,3 +27,20 @@ class Tag(db.Model):
 
 class SentTag(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    timestamp = db.Column(db.DateTime)
+
+    sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    sender = db.relationship('User')
+
+    receiver_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    receiver = db.relationship('User')
+
+    def __init__(self, sender, receiver, timestamp=None):
+        self.sender = sender
+        self.receiver = receiver
+        if not timestamp:
+            timestamp = datetime.utcnow()
+        self.timestamp = timestamp
+
+    def __repr__(self):
+        return "Sent Tag"

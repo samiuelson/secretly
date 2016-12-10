@@ -12,4 +12,4 @@ class TagsResource(Resource):
 
     @marshal_with(tag_fields)
     def get(self):
-        return Tag.query.all()
+        return Tag.query.filter_by(enabled = True).all()

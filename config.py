@@ -7,3 +7,4 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_migrate_repository')
 BASIC_AUTH_USERNAME = 'login'
 BASIC_AUTH_PASSWORD = 'pass'
+FB_ACCESS_TOKEN = 'xxx'

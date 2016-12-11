@@ -7,7 +7,6 @@ class TagsResource(Resource):
     tag_fields = {
         'id': fields.Integer,
         'key': fields.String,
-        'enabled': fields.Boolean
     }
 
     @marshal_with(tag_fields)

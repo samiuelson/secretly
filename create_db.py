@@ -6,6 +6,9 @@ def create_tags():
     tags = [
         Tag("coffee", True),
         Tag("go_dancing", True),
+        Tag("have_a_drink", True),
+        Tag("was_in_love", True),
+        Tag("would_date", True),
         Tag("test", False)
     ]
     return tags

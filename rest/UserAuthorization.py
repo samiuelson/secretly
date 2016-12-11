@@ -26,7 +26,7 @@ class UserAuthorization(Resource):
             else:
                 return "Dude, you've sent bad access token", 401
         else:
-            return "Nice try but... Not so easy!", 401
+            return "Nice try but... Not so easy! Didn't get fb_access_token param", 401
 
 
     ''' Checks if user is currently registered to Secretly backend '''

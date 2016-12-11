@@ -1,3 +1,4 @@
 flask-restful
 SQLAlchemy
 Flask-SQLAlchemy
+requests

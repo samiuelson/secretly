@@ -16,7 +16,15 @@ class UserAuthorization(Resource):
         args = self.parser.parse_args()
 
         if 'fb_access_token' in args and args.get('fb_access_token'):
-            return "Success"
+            fb_access_token = args.get('fb_access_token')
+            params = {'input_token':fb_access_token}
+            response = self.fb_api.get('/debug_token', **params)
+            if response.status_code == 200:
+                # TODO user access_token is valid
+                # register user in db
+                return "Success"
+            else:
+                return "Dude, you've sent bad access token", 401
         else:
             return "Nice try but... Not so easy!", 401
 

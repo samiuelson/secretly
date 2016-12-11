@@ -23,7 +23,7 @@ class Tag(db.Model):
     __tablename__ = "tag"
 
     id = db.Column(db.Integer, primary_key=True)
-    key = db.Column(db.String, nullable=False)
+    key = db.Column(db.String, nullable=False, unique=True)
     enabled = db.Column(db.Boolean, default=True)
 
     def __init__(self, key, enabled):

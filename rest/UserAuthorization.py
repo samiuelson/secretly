@@ -1,10 +1,14 @@
 from flask_restful import Resource, reqparse
 
+from fb.FbApi import FbApi
+
+
 class UserAuthorization(Resource):
 
     def __init__(self):
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('fb_access_token')
+        self.fb_api = FbApi()
 
 
     ''' Sends user data in post request in order to register it '''

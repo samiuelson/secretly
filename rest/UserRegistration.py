@@ -3,7 +3,7 @@ from flask_restful import Resource, reqparse
 from fb.FbApi import FbApi
 
 
-class UserAuthorization(Resource):
+class UserRegistration(Resource):
 
     def __init__(self):
         self.parser = reqparse.RequestParser()

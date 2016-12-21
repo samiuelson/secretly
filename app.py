@@ -3,7 +3,7 @@ from flask_restful import Api
 
 from data.Db import db
 from rest.TagsResource import TagsResource
-from rest.UserAuthorization import UserAuthorization
+from rest.UserRegistration import UserRegistration
 
 
 def hello_world():
@@ -24,7 +24,7 @@ app.add_url_rule('/', view_func=hello_world)
 api = Api(app)
 
 api.add_resource(TagsResource, '/tags', endpoint='tags')
-api.add_resource(UserAuthorization, '/user', '/auth', endpoint='auth')
+api.add_resource(UserRegistration, '/user', '/auth', endpoint='auth')
 
 if __name__ == '__main__':
     app.run(debug=True)

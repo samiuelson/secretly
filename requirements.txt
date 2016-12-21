@@ -2,3 +2,5 @@ flask-restful
 SQLAlchemy
 Flask-SQLAlchemy
 requests
+Flask-HTTPAuth
+itsdangerous
